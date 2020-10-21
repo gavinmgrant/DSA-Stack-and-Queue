@@ -66,8 +66,8 @@ const is_palindrome = s => {
     }
 
     // check if each letter in both stacks above are equal
-    while(!isEmpty(forward)) {
-        if(peek(forward) === peek(backward)) {
+    while (!isEmpty(forward)) {
+        if (peek(forward) === peek(backward)) {
             forward.pop();
             backward.pop();
         } else {
@@ -79,7 +79,40 @@ const is_palindrome = s => {
 };
 
 // Expected answers: true, true, true, false
+/*
 console.log(is_palindrome("dad"));
 console.log(is_palindrome("A man, a plan, a canal: Panama"));
 console.log(is_palindrome("1001"));
 console.log(is_palindrome("Tauhida"));
+*/
+
+// 4. Matching parentheses in an expression
+
+const parenthesesMatch = exp => {
+    const stack = new Stack();
+
+    for (let i = 0; i < exp.length; i++) {
+        // check string expression for opening brackets and add to the stack
+        if (exp[i] === '(') {
+            stack.push(exp[i]);
+        }
+        // if the string character is ')' and the stack is empty that means there are no opening brackets
+        if (exp[i] === ')') {
+            if (isEmpty(stack)) {
+                console.log('you are missing a "("');
+                return false;
+            }
+            // remove one opening bracket since we found a closing bracket
+            stack.pop();
+        }
+    }
+    // if there are any remaining opening brackets in the stack, that means they don't have a matching closing bracket
+    if (!isEmpty(stack)) {
+        console.log('you are missing a ")"');
+        return false;
+    }
+
+    return true;
+}
+
+console.log(parenthesesMatch('((((((((())'));
