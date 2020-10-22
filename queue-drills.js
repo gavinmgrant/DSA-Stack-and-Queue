@@ -45,3 +45,6 @@ main();
 console.log(peek(starTrekQ));
 console.log(isEmpty(starTrekQ));
 console.log(display(starTrekQ));
+starTrekQ.dequeue();
+starTrekQ.dequeue();
+console.log(display(starTrekQ));
