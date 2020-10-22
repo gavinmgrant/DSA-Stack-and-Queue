@@ -16,6 +16,9 @@ main();
 // 2. Useful methods for a stack
 
 const peek = stack => {
+    if (!stack.top) {
+        return false;
+    }
     return stack.top.data;
 }
 
@@ -115,4 +118,40 @@ const parenthesesMatch = exp => {
     return true;
 }
 
-console.log(parenthesesMatch('((((((((())'));
+// console.log(parenthesesMatch('((((((((())'));
+
+// 5. Sort stack
+
+const toSort = new Stack();
+const makeSort = () => {
+    toSort.push(8);
+    toSort.push(6);
+    toSort.push(10);
+    toSort.push(2);
+    toSort.push(3);
+
+    return toSort;
+}
+
+makeSort();
+console.log(display(toSort));
+
+const sortStack = stack => {
+    const sortedStack = new Stack();
+    // iterate through the input stack...
+    while (!isEmpty(stack)) {
+        // get the top node value of the input stack
+        let temp = stack.pop();
+        // go through numbers lower than the current high value in the new, sorted stack
+        while (temp < peek(sortedStack)) {
+            // move values to input stack
+            stack.push(sortedStack.pop());
+        }
+        // insert the top value of the stack into the new, sorted stack
+        sortedStack.push(temp);
+    }
+    return sortedStack;
+};
+
+const sorted = sortStack(toSort);
+console.log(display(sorted));
