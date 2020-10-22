@@ -1,4 +1,6 @@
 const Queue = require('./queue');
+const QueueDouble = require('./queue-double');
+const Stack = require('./stack');
 
 const starTrekQ = new Queue();
 
@@ -41,10 +43,30 @@ const display = queue => {
     return result;
 }
 
+/*
 main();
+console.log(main());
 console.log(peek(starTrekQ));
 console.log(isEmpty(starTrekQ));
 console.log(display(starTrekQ));
 starTrekQ.dequeue();
 starTrekQ.dequeue();
 console.log(display(starTrekQ));
+*/
+
+// 7. Create a queue class using doubly linked list
+
+const starTrekQD = new QueueDouble;
+
+const mainDouble = () => {
+    starTrekQD.enqueue('Kirk');
+    starTrekQD.enqueue('Spock');
+    starTrekQD.enqueue('Uhura');
+    starTrekQD.enqueue('Sulu');
+    starTrekQD.enqueue('Checkov');
+
+    return starTrekQD;
+}
+
+console.log(mainDouble());
+console.log(starTrekQD.first);
