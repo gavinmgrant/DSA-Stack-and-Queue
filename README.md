@@ -77,10 +77,10 @@ M Christopher
 
 F Beyonce
 
-Female dancer is Jane, and the male dancer is Frank
-Female dancer is Madonna, and the male dancer is John
-Female dancer is Beyonce, and the male dancer is Sherlock
-There are 2 male dancers waiting to dance
+* Female dancer is Jane, and the male dancer is Frank
+* Female dancer is Madonna, and the male dancer is John
+* Female dancer is Beyonce, and the male dancer is Sherlock
+* There are 2 male dancers waiting to dance
 
 ## 10. The Ophidian Bank
 At the Ophidian Bank, a single teller serves a long queue of people. New customers join the end of the queue, and the teller will serve a customer only if they have all of the appropriate paperwork. Write a representation of this queue; 25% of the time (random), a customer's paperwork isn't quite right, and it's back to the end of the queue. Show what a few minutes of the bank's lobby would look like.
